@@ -1,0 +1,41 @@
+{
+  "avatar_registry_configuration": {
+    "schema_name": "public.tmmmc_avatar_registry",
+    "layer_type": "User Profile Core Matrix",
+    "verification_status": "SOVEREIGN_ID_ACTIVE"
+  },
+  "database_profile_fields": [
+    {
+      "column_id": "avatar_uuid",
+      "data_type": "UUID",
+      "constraint": "PRIMARY_KEY DEFAULT gen_random_uuid()",
+      "description": "Unique cryptographic identifier assigned to each inbound scholar profile."
+    },
+    {
+      "column_id": "verified_email",
+      "data_type": "TEXT",
+      "constraint": "UNIQUE NOT NULL",
+      "description": "The student or family email address captured on autopilot by ManyChat hooks."
+    },
+    {
+      "column_id": "onboarding_tier",
+      "data_type": "INTEGER",
+      "constraint": "DEFAULT 1",
+      "description": "Scales automatically from Tier 1 up to Tier 5 Academies based on diagnostic strengths verification."
+    },
+    {
+      "column_id": "welcome_tokens_allocated",
+      "data_type": "BOOLEAN",
+      "constraint": "DEFAULT TRUE",
+      "description": "Triggers the immediate injection of the 10 free welcome tokens into the back-office ledger."
+    }
+  ],
+  "security_isolation_protocols": {
+    "data_integrity_check": "100_PERCENT_MATRIX_RETENTION_ENFORCED",
+    "anti_scraping_law_enforcement": "AUTOMATIC_GENERATIONAL_IP_BAN_ENFORCED",
+    "system_clearance_tier": "MAXIMUM_CONFIDENCE_TIER_1"
+  }
+}
+
+
+
